@@ -12,6 +12,7 @@ use Rector\Core\Configuration\Option;
 use Rector\Core\Rector\AbstractRector;
 use Rector\Nette\Set\NetteSetList;
 use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
+use Rector\Php80\Rector\Class_\AnnotationToAttributeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Restoration\Rector\ClassMethod\InferParamFromClassMethodReturnRector;
 use Rector\Restoration\ValueObject\InferParamFromClassMethodReturn;
@@ -62,6 +63,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                 new ReturnArrayClassMethodToYield('PHPUnit\Framework\TestCase', '*provide*'),
             ]),
         ]]);
+
+    $services->set(AnnotationToAttributeRector::class);
 
     $parameters = $containerConfigurator->parameters();
 
