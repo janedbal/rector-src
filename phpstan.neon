@@ -511,3 +511,7 @@ parameters:
         -
             message: '#Property with protected modifier is not allowed\. Use interface contract method instead#'
             path: rules/Strict/Rector/AbstractFalsyScalarRuleFixerRector.php
+
+        -
+            message: '#Cognitive complexity for "Rector\\Core\\Validation\\EmptyConfigurableRectorChecker\:\:resolveEmptyConfigurable\(\)" is 16, keep it under 9#'
+            path: src/Validation/EmptyConfigurableRectorChecker.php
